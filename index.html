@@ -20,7 +20,7 @@
         <div class="row justify-content-center">
           <h1 class="h3 mb-3">請先登入</h1>
           <div class="col-8">
-            <form class="form-signin" @submit.prevent="login">
+            <form class="form-signin" @submit.prevent>
               <div class="form-floating">
                 <input
                   type="email"
@@ -43,7 +43,11 @@
                 />
                 <label for="password">Password</label>
               </div>
-              <button class="btn btn-primary btn-lg w-100 mt-3" type="submit">
+              <button
+                class="btn btn-primary btn-lg w-100 mt-3"
+                type="button"
+                @click.prevent="login"
+              >
                 登入
               </button>
             </form>
