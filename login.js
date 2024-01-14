@@ -19,7 +19,7 @@ createApp({
           document.cookie = `WillyToken=${token};expires=${new Date(
             expired
           )}; path=/`;
-          window.location = "index.html";
+          window.location = "product.html";
         })
         .catch((err) => alert(err.response.data.message));
     },
