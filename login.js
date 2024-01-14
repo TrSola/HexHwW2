@@ -16,7 +16,10 @@ createApp({
         .post("https://ec-course-api.hexschool.io/v2/admin/signin", this.user)
         .then((res) => {
           const { expired, token } = res.data;
-          window.location = "product.html";
+          document.cookie = `WillyToken=${token};expires=${new Date(
+            expired
+          )}; path=/`;
+          window.location = "index.html";
         })
         .catch((err) => alert(err.response.data.message));
     },
